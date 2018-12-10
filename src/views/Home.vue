@@ -113,8 +113,6 @@ export default {
     }
   },
   mounted () {
-    let $css = document.querySelector('.form-box').getAttribute('class')
-    console.log(this.$refs.home)
     this.getData()
     setInterval(() => {
       this.nTime = moment().format('YYYY/MM/DD HH:mm:ss')
