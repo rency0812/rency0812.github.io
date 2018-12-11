@@ -7,7 +7,200 @@
     <link rel="icon" href="https://pic.52112.com/181024/EPS-181024_256/HPIht9kHvI_small.jpg">
     <link href="https://cdn.bootcss.com/fullPage.js/3.0.4/fullpage.min.css" rel="stylesheet">
     <style type="text/css">
+      div, ul, li, h3, p,section,strong{
+        margin: 0;
+        padding: 0;
+      }
+      ul li{
+        list-style: none;
+      }
       .section { text-align: center; font: 50px "Microsoft Yahei"; color: #fff;}
+      h3.title{
+        font-size: 20px;
+        letter-spacing: 10px;
+      }
+      .first-page h3::after{
+        display: block;
+        content: " ";
+        width: 100%;
+        height: 1px;
+        background: black;
+        margin-top: 12px;
+      }
+      .first-page p{
+        font-size: 16px;
+        margin: 8px;
+        letter-spacing: 4px;
+      }
+      .about-me{
+        width: 800px;
+        margin: 0 auto;
+        display: flex;
+      }
+      .about-me li{
+        flex: 1;
+        width: 160px;
+        height: 160px;
+        background-size: 50px 50px;
+        background-position: center center;
+        border: 1px solid #ccc;
+        background-repeat: no-repeat;
+        margin-left: 40px;
+        border-radius: 100%;
+        color: #eee;
+        font-size: 16px;
+      }
+      .about-me li:after{
+        display: block;
+        margin-top: 110px;
+        font-weight: bold;
+      }
+      .about-me .age{
+        background-image: url("https://pic.52112.com/icon/256/20150415/646/49392.png");
+      }
+      .about-me .age:after{
+        content: "年龄/26";
+      }
+      .about-me .edu{
+        background-image: url("https://pic.52112.com/icon/256/20131219/149/15218.png");
+      }
+      .about-me .edu:after{
+        content: "学历/本科";
+      }
+      .about-me .location{
+        background-image: url("https://pic.52112.com/icon/256/20140119/176/1223015.png");
+      }
+      .about-me .location:after{
+        content: "坐标/深圳";
+      }
+      .about-me .worked{
+        background-image: url("https://pic.52112.com/icon/256/20131001/21/3177.png");
+      }
+      .about-me .worked:after{
+        content: "状态/在职";
+      }
+      .-desc{
+        font-size: 18px;
+        width: 800px;
+        margin: 30px auto;
+        padding-left: 20px;
+        color: #eee;
+        line-height: 1.6;
+        letter-spacing: 4px;
+      }
+      .second-page h3{
+        line-height: 56px;
+      }
+      .slide:nth-child(1){
+        background: url("ditu.jpg") no-repeat center;
+        background-size: 100% 100%;
+      }
+      .slide:nth-child(2){
+        background: url("ele.jpg") no-repeat center;
+        background-size: 100% 100%;
+      }
+      .slide:nth-child(3){
+        background: url("biao.jpg") no-repeat center;
+        background-size: 100% 100%;
+      }
+      .slide p, .slide h3{
+        color: #666;
+      }
+      .slide p{
+        font-size: 16px;
+      }
+      .skill-wrap{
+        position: relative;
+        width: 400px;
+        height:400px;
+        margin: 20px auto;
+        border-radius: 100%;
+        border: 3px dotted #eee;
+        animation: Drotate 16s linear infinite;
+        -webkit-animation: Drotate 16s linear infinite;
+      }
+      .skill-wrap li{
+        position: absolute;
+        width:72px;
+        height:72px;
+        border-radius: 100%;
+        font-size: 16px;
+        font-weight: bold;
+        background: burlywood;
+        line-height: 72px;
+        animation: Drotates 16s linear infinite;
+        -webkit-animation: Drotates 16s linear infinite;
+      }
+      .skill-wrap li:nth-child(1){
+        top:0;
+        left:0;
+        margin-top: 36px;
+      }
+      .skill-wrap li:nth-child(2){
+        top: 28px;
+        left: 294px;
+        margin-left: -36px;
+        margin-top: -36px;
+      }
+      .skill-wrap li:nth-child(3){
+        top: 45px;
+        right: -14px;
+        margin-top: 36px;
+      }
+      .skill-wrap li:nth-child(4){
+        top: 162px;
+        right: 0;
+        margin-top: 36px;
+        margin-right: -30px;
+      }
+      .skill-wrap li:nth-child(5){
+        top: 398px;
+        right: 0;
+        margin-top: -72px;
+        margin-right: 36px;
+      }
+      .skill-wrap li:nth-child(6){
+        top: 400px;
+        left: 200px;
+        margin-top: -36px;
+        margin-left: -36px;
+      }
+      .skill-wrap li:nth-child(7){
+        top: 339px;
+        left: 62px;
+      }
+      .skill-wrap li:nth-child(8){
+        left: -36px;
+        top: 200px;
+        margin-top: -36px;
+      }
+      .skill-wrap li:nth-child(9){
+        top: -32px;
+        left: 120px;
+      }
+      .skill-wrap li:nth-child(10){
+        top: 266px;
+        left: -6px;
+      }
+      .s-title{
+        margin-bottom: 56px;
+      }
+      @keyframes Drotate {
+        from{
+          transform: rotateZ(0deg);
+        }
+        to{
+          transform: rotateZ(360deg);
+        }
+      }
+      @keyframes Drotates {
+        from{
+          transform: rotateZ(360deg);
+        }
+        to{
+          transform: rotateZ(0deg);
+        }
+      }
     </style>
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/fullPage.js/3.0.4/fullpage.min.js"></script>
@@ -18,28 +211,67 @@
       <strong>We're sorry but my-vuepro1 doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
     <div id="app">
-      <div class="section">
-        <h3>第一屏</h3>
-        <p>fullPage.js — 基本演示</p>
+      <div class="section first-page">
+        <img src="5.png">
+        <h3 class="title">读万卷书,行万里路;路漫漫其修远兮,吾将上下而求索</h3>
+        <p>我是任立</p>
+        <p>一名前端技术人员</p>
+        <p>rency0812@163.com</p>
+      </div>
+      <div class="section second-page">
+        <h3 class="title">关于我</h3>
+        <ul class="about-me">
+          <li class="age"></li>
+          <li class="edu"></li>
+          <li class="location"></li>
+          <li class="worked"></li>
+        </ul>
+        <div class="-desc">
+          三年全职前端开发经验,熟悉MVC开发,模块化开发,高效的自学能力,具备独立分析解决问题能力,强烈的自我驱动力,代码强迫症患者,
+          熟练使用vue及各种其它类库以及常用方法封装,常驻PC/微信平台前端开发，擅长组件化开发，能脱离库书写JS代码，编码常思其健壮性，扩展性，维护性。
+        </div>
       </div>
       <div class="section">
-        <div class="slide"><h3>第二屏的第一屏</h3></div>
-        <div class="slide"><h3>第二屏的第二屏</h3></div>
-        <div class="slide"><h3>第二屏的第三屏</h3></div>
+        <div class="slide">
+          <h3 class="title">新能源车运营监管系统</h3>
+          <p class="-desc">该系统旨在将车辆做联网化处理，方便实时的监控车辆的具体状况，并对一切突发状况能够更好更快的处理。整个系统涵盖有app,web后台管理系统等</p>
+        </div>
+        <div class="slide"><h3 class="title">新能源充电桩运营管理系统</h3></div>
+        <div class="slide"><h3 class="title">统计报表</h3></div>
       </div>
       <div class="section">
-        <h3>第三屏</h3>
-      </div>
-      <div class="section">
-        <h3>第四屏</h3>
-        <p>这是最后一屏</p>
+        <h3 class="title s-title">我的技术栈</h3>
+        <ul class="skill-wrap">
+          <li>vue</li>
+          <li>sass</li>
+          <li>es6</li>
+          <li>html5</li>
+          <li>css3</li>
+          <li>leafletjs</li>
+          <li>echarts</li>
+          <li>mpvue</li>
+          <li>webpack</li>
+          <li>git</li>
+        </ul>
       </div>
     </div>
     <script>
     $(function(){
+    	var timer = null;
       $('#app').fullpage({
-        sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#f90']
+        sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#c46969']
       });
+	    function setTimer() {
+		    timer = setInterval(function(){
+			    $.fn.fullpage.moveSlideRight();
+		    }, 6000);
+	    }
+	    setTimer();
+	    $('.slide').hover(function () {
+		    clearInterval(timer)
+	    },function () {
+		    setTimer()
+	    })
     });
     </script>
   </body>
