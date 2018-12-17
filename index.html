@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <title>沧海一粟</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="icon" href="https://pic.52112.com/181024/EPS-181024_256/HPIht9kHvI_small.jpg">
@@ -24,6 +25,59 @@
       .first-page .fp-tableCell, .slide .fp-tableCell{
         background: rgba(0,0,0,0.4);
       }
+      .time-box{
+        width: 670px;
+        margin: -140px auto 100px;
+        overflow: hidden;
+      }
+      .dd img{
+        width: 100%;
+        height: 100%;
+      }
+      .time-box li.bg,.dd{
+        float: left;
+        width: 80px;
+				height: 140px;
+				text-align: center;
+				line-height: 120px;
+        background-size: cover;
+        background-position: center center;
+        transition: all .5s;
+        -webkit-transition:all .2s;
+      }
+      .time-box ul li:nth-child(8){
+        padding-right: 22px;
+      }
+      .time-box li.b0{
+				background-image: url(0.jpg);
+			}
+			.time-box li.b1{
+				background-image: url(1.jpg);
+			}
+			.time-box li.b2{
+				background-image: url(2.jpg);
+			}
+			.time-box li.b3{
+				background-image: url(3.jpg);
+			}
+			.time-box li.b4{
+				background-image: url(4.jpg);
+			}
+			.time-box li.b5{
+				background-image: url(5.jpg);
+			}
+			.time-box li.b6{
+				background-image: url(6.jpg);
+			}
+			.time-box li.b7{
+				background-image: url(7.jpg);
+			}
+			.time-box li.b8{
+				background-image: url(8.jpg);
+			}
+			.time-box li.b9{
+				background-image: url(9.jpg);
+			}
       h3.title{
         font-size: 20px;
         letter-spacing: 10px;
@@ -213,7 +267,6 @@
     </style>
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/fullPage.js/3.0.4/fullpage.min.js"></script>
-    <title>沧海一粟</title>
   </head>
   <body>
     <noscript>
@@ -221,6 +274,18 @@
     </noscript>
     <div id="app">
       <div class="section first-page">
+        <div class="time-box">
+          <ul>
+            <li class="bg b"></li>
+            <li class="bg b"></li>
+            <li class="dd"><img src="nn.jpg"/></li>
+            <li class="bg b"></li>
+            <li class="bg b"></li>
+            <li class="dd"><img src="nn.jpg"/></li>
+            <li class="bg b"></li>
+            <li class="bg b"></li>
+          </ul>
+        </div>
         <img src="5.png">
         <h3 class="title">读万卷书,行万里路;路漫漫其修远兮,吾将上下而求索</h3>
         <p>我是任立</p>
@@ -299,7 +364,24 @@
         'https://image.ibaotu.com/sb/previews/10/72/9e8e6195aaeef35480dee232b6e8cf47.jpg',
         'https://image.ibaotu.com/sb/previews/05/66/73a1d13c9861e9cb128c08a806d52f6c.jpg',
       ];
-      $('.first-page').css('backgroundImage', 'url('+imgArr[m]+')')
+      $('.first-page').css('backgroundImage', 'url('+imgArr[m]+')');
+      // for time
+      var oLi = document.querySelectorAll('.time-box li.bg');
+      function play(){
+        var d = new Date();
+        var hh = d.getHours();
+        var mm = d.getMinutes();
+        var ss = d.getSeconds();
+        var H = hh<10?'0'+hh:hh+'';
+        var M = mm<10?'0'+mm:mm+'';
+        var S = ss<10?'0'+ss:ss+'';
+        var sTime = (H+M+S).split('');
+        for(var i=0, len=sTime.length;i<len;i++){
+          oLi[i].className = 'bg b'+sTime[i]
+        }
+        setTimeout(play,1000)
+      }
+      play();
     });
     </script>
   </body>
