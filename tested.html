@@ -27,20 +27,31 @@
   <script>
     var oP = document.querySelectorAll('#app p');
     var len = oP.length;
-    function p_click(){
-      alert()
+    function p_click(e){
+      var code = (window.event) ? event.keyCode : e.which;
+      if (code === 17) {
+        sessionStorage.setItem('ctrlCode',code)
+      }
+      if(code === 81){
+        sessionStorage.setItem('qCode',code)
+      }
+      if(sessionStorage.getItem('ctrlCode')){
+        if(sessionStorage.getItem('qCode')){
+          document.getElementById('app').style.background = 'red'
+          sessionStorage.clear()
+        }
+        
+      }else{
+        console.log(false)
+      }
     }
+    document.onkeydown = p_click
     for(var i=0;i<len;i++){
       oP[i].index = i;
       oP[i].onclick = function(){
         index = this.index
         alert(index)
       }
-    }
-
-    function car (l){
-      this.lunZi = l;
-      
     }
   </script>
 </html>
